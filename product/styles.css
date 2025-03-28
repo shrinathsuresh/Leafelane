@@ -1,0 +1,36 @@
+body {
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+  }
+  
+  h1 {
+    color: #417142;
+  }
+  
+  .card {
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: scale(1.03);
+  }
+  
+  .card-img-top {
+    object-fit: cover;
+    height: 250px;
+    width: 100%;
+  }
+  
+  button {
+    width: 100%;
+  }
+  
+  #reviewsContainer p {
+    background-color: #e9f5e9;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+  

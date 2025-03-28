@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" crossorigin="anonymous">
+  <link rel="icon" href="../main/img/logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+  <title>Payment - Farmers Market</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #4CAF50, #2E7D32);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+    }
+    .container {
+      background-color: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      max-width: 500px;
+      width: 100%;
+    }
+    #successMessage {
+      display: none;
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #4CAF50;
+      color: white;
+      border-radius: 10px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="text-center mb-4">Payment Details</h1>
+    <p id="totalAmount" class="text-center fs-5 fw-bold">Calculating total amount...</p>
+    
+    <form id="paymentForm">
+      <div class="mb-3">
+        <label for="cardNumber" class="form-label">Card Number</label>
+        <input type="text" id="cardNumber" class="form-control" placeholder="1234 5678 9101 1121" maxlength="19" oninput="formatCardNumber()" required>
+      </div>
+      <div class="row mb-3">
+        <div class="col">
+          <label for="expiryDate" class="form-label">Expiry Date</label>
+          <input type="text" id="expiryDate" class="form-control" placeholder="MM/YY" maxlength="5" oninput="formatExpiryDate()" required>
+        </div>
+        <div class="col">
+          <label for="cvv" class="form-label">CVV</label>
+          <input type="password" id="cvv" class="form-control" placeholder="123" maxlength="3" required>
+        </div>
+      </div>
+      <button class="btn btn-success w-100" type="button" onclick="completePayment()">Proceed to Pay</button>
+    </form>
+
+    <button class="btn btn-primary w-100 mt-4" onclick="goTohomePage()">Back to Product</button>
+    <div id="successMessage">Payment Successful!</div>
+  </div>
+
+  <script>
+    function calculateTotal() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      if (cart.length === 0) {
+        document.getElementById('totalAmount').textContent = 'No items in the cart to pay for!';
+        return;
+      }
+
+      const totalAmount = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+      document.getElementById('totalAmount').textContent = `Total Amount to Pay: ₹${totalAmount.toFixed(2)}`;
+    }
+
+    function completePayment() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      if (cart.length === 0) {
+        alert('No items in the cart to pay for!');
+        return;
+      }
+
+      const cardNumber = document.getElementById('cardNumber').value;
+      const expiryDate = document.getElementById('expiryDate').value;
+      const cvv = document.getElementById('cvv').value;
+
+      if (!cardNumber || !expiryDate || !cvv) {
+        alert('Please fill in all card details.');
+        return;
+      }
+
+      const completedOrders = JSON.parse(localStorage.getItem('completedOrders')) || [];
+      completedOrders.push(...cart);
+      localStorage.setItem('completedOrders', JSON.stringify(completedOrders));
+      localStorage.removeItem('cart');
+
+      document.getElementById('successMessage').style.display = 'block';
+      setTimeout(() => {
+        alert('Payment successful! Your order has been placed.');
+        window.location.href = '../cart/cart.html?page=orders';
+      }, 1500);
+    }
+
+    function goTohomePage() {
+      window.location.href = '../product/product.html';
+    }
+
+    function formatCardNumber() {
+      let input = document.getElementById('cardNumber');
+      input.value = input.value.replace(/[^0-9]/g, '').replace(/(.{4})/g, '$1 ').trim();
+    }
+
+    function formatExpiryDate() {
+      let input = document.getElementById('expiryDate');
+      input.value = input.value.replace(/[^0-9]/g, '').replace(/(\d{2})(\d{1,2})?/, '$1/$2').trim();
+    }
+
+    // Calculate and display the total on page load
+    calculateTotal();
+  </script>
+</body>
+</html>

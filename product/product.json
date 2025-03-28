@@ -1,0 +1,141 @@
+[
+    {
+      "id": 1,
+      "name": "Fresh Apples",
+      "description": "Crisp and juicy apples sourced from local farms.",
+      "price": 150,
+      "image": "../product/img/apple.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Organic Bananas",
+      "description": "Naturally ripened organic bananas, rich in nutrients.",
+      "price": 80,
+      "image": "../product/img/banana.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Farm Eggs",
+      "description": "Freshly laid free-range eggs from our local farm.",
+      "price": 200,
+      "image": "../product/img/eggs.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Organic Milk",
+      "description": "Pure and fresh organic milk, directly from grass-fed cows.",
+      "price": 120,
+      "image": "../product/img/milk.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Honey",
+      "description": "Raw and natural honey harvested from local beekeepers.",
+      "price": 300,
+      "image": "../product/img/honey.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Fresh Tomatoes",
+      "description": "Ripe and juicy tomatoes grown without pesticides.",
+      "price": 50,
+      "image": "../product/img/tomato.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Carrots",
+      "description": "Fresh and crunchy carrots packed with vitamins.",
+      "price": 60,
+      "image": "../product/img/carrots.png"
+    },
+    {
+      "id": 8,
+      "name": "Potatoes",
+      "description": "Organic potatoes perfect for a variety of dishes.",
+      "price": 40,
+      "image": "../product/img/potato.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Broccoli",
+      "description": "Freshly harvested organic broccoli, rich in fiber and vitamins.",
+      "price": 90,
+      "image": "../product/img/broccoli.jpg"
+    },
+    {
+      "id": 10,
+      "name": "Spinach",
+      "description": "Nutrient-rich spinach leaves, freshly picked from local farms.",
+      "price": 70,
+      "image": "../product/img/spinach.jpg"
+    },
+    {
+      "id": 11,
+      "name": "Oranges",
+      "description": "Juicy and tangy oranges, packed with vitamin C.",
+      "price": 120,
+      "image": "../product/img/oranges.jpg"
+    },
+    {
+      "id": 12,
+      "name": "Mangoes",
+      "description": "Sweet and delicious mangoes, freshly harvested.",
+      "price": 250,
+      "image": "../product/img/mangos.jpg"
+    },
+    {
+      "id": 13,
+      "name": "Strawberries",
+      "description": "Fresh and juicy strawberries, perfect for desserts.",
+      "price": 300,
+      "image": "../product/img/strawbery.jpg"
+    },
+    {
+      "id": 14,
+      "name": "Fresh Tomatoes",
+      "description": " Juicy and vibrant, perfect for salads, sauces, and sandwiches.",
+      "price": 500,
+      "image": "../product/img/tomato.jpg"
+    },
+    {
+      "id": 15,
+      "name": "Bell Pepper",
+      "description": "Crisp and colorful, adding sweetness and crunch to any dish.",
+      "price": 600,
+      "image": "../product/img/pepper.jpg"
+    },
+    {
+      "id": 16,
+      "name": "Broccoli",
+      "description": "ONutritious and fresh, ideal for stir-fries, soups, and sides.",
+      "price": 80,
+      "image": "../product/img/broccoli.jpg"
+    },
+    {
+      "id": 17,
+      "name": "Blue Berry",
+      "description": "Sweet and antioxidant-rich, perfect for snacks, smoothies, or desserts.",
+      "price": 60,
+      "image": "../product/img/berry.jpg"
+    },
+    {
+      "id": 18,
+      "name": "Cabbage",
+      "description": "Crisp and versatile, great for slaws, stir-fries, and soups.",
+      "price": 40,
+      "image": "../product/img/cabbage.jpg"
+    },
+    {
+      "id": 19,
+      "name": "Pineapple",
+      "description": "Sweet and tangy, adding a tropical twist to dishes and drinks.",
+      "price": 20,
+      "image": "../product/img/pineapple.jpg"
+    },
+    {
+      "id": 20,
+      "name": "Wattermellon",
+      "description": "Refreshing and hydrating, perfect for summer snacks and juices.",
+      "price": 500,
+      "image": "../product/img/wattermellon.jpg"
+    }]
